@@ -22,7 +22,7 @@ import org.springframework.web.bind.annotation.RestController;
 //@Tag(name = "User Account API", description = "For User account creation and login")
 public class UserController {
 
-    private final UserRepository userRepository;
+//    private final UserRepository userRepository;
 
     private final UserService userService;
 
