@@ -1,6 +1,6 @@
 package com.uzo.fashionblog_week_nine.repositories;
 
-import org.apache.catalina.User;
+import com.uzo.fashionblog_week_nine.model.User;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

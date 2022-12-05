@@ -16,7 +16,7 @@ import java.util.Set;
 @NoArgsConstructor
 @ToString
 @Table(name = "users")
-public class User extends Deserializers.Base implements Serializable {
+public class User {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -29,12 +29,15 @@ public class User extends Deserializers.Base implements Serializable {
     @Column(name = "last_name", nullable = false, length = 50)
     private String lastName;
 
+    @Column(name = "user_name", nullable = false, length = 50)
+    private String userName;
+
     @Column(name = "email", nullable = false, length = 50, unique = true)
     private String email;
 
     @Column(name = "password", nullable = false, length = 50)
     private String password;
 
-    @OneToMany(mappedBy = "user", cascade = CascadeType.REMOVE, orphanRemoval = true)
-    private Set<Task> tasks;
+//    @OneToMany(mappedBy = "user", cascade = CascadeType.REMOVE, orphanRemoval = true)
+//    private Set<Task> tasks;
 }

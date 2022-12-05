@@ -4,10 +4,10 @@ import com.uzo.fashionblog_week_nine.dtos.UserLoginDto;
 import com.uzo.fashionblog_week_nine.dtos.UserResponseDto;
 import com.uzo.fashionblog_week_nine.dtos.UserSignupDto;
 import com.uzo.fashionblog_week_nine.exception.InvalidRequestException;
+import com.uzo.fashionblog_week_nine.model.User;
 import com.uzo.fashionblog_week_nine.repositories.UserRepository;
 import com.uzo.fashionblog_week_nine.services.UserService;
 import lombok.AllArgsConstructor;
-import org.apache.catalina.User;
 import org.springframework.beans.BeanUtils;
 import org.springframework.stereotype.Service;
 
