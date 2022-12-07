@@ -20,16 +20,27 @@ public class Comment {
 
 
     private Long Id;
-    private String userName;
-    private String commentDescription;
-
+    @Column(columnDefinition = "TEXT")
+    private String text;
     @CreationTimestamp
     private LocalDateTime createdAt;
-
-
     @ManyToOne
-    User user = new User();
+    @JoinColumn(name = "user",
+               foreignKey = @ForeignKey(name= "user_comment_id_fk"))
+    private User user;
+    @ManyToOne
+    @JoinColumn(name = "post",
+                foreignKey = @ForeignKey(name = "post_comment_id_fk"))
+    private Post post;
 
-
-
+    @Override
+    public String toString() {
+        return "Comment{" +
+                "Id=" + Id +
+                ", text='" + text + '\'' +
+                ", createdAt=" + createdAt +
+                ", user=" + user +
+                ", post=" + post +
+                '}';
+    }
 }

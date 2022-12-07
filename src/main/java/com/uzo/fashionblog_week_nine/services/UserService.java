@@ -7,4 +7,6 @@ import com.uzo.fashionblog_week_nine.dtos.UserSignupDto;
 public interface UserService {
     UserResponseDto signUp(UserSignupDto userSignupDto);
     UserResponseDto login(UserLoginDto userLoginDto);
+
+    String deleteUser(Long id);
 }

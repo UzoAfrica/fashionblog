@@ -17,6 +17,8 @@ public class UserSignupDto {
 //    @NotEmpty
     private String lastName;
 
+    private String userName;
+
 //    @NotEmpty
     private String email;
 

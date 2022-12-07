@@ -43,6 +43,15 @@ public class UserServiceImpl implements UserService {
         BeanUtils.copyProperties(user, userResponseDto);
         return userResponseDto;
     }
+    @Override
+    public String deleteUser(Long id) {
+        userRepository.deleteById(id);
+        return "Deleted Successfully";
+
+
+    }
+
+
 
 }
 
