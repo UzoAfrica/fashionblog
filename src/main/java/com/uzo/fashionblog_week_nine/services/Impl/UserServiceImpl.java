@@ -27,9 +27,10 @@ public class UserServiceImpl implements UserService {
 
         BeanUtils.copyProperties(userSignupDto, user);
         try {
-            userRepository.save(user);
+            user = userRepository.save(user);
         } catch (RuntimeException e) {
-            throw new InvalidRequestException(e.getMessage(), "Try again");
+
+//            throw new InvalidRequestException(e.getMessage(), "Try again");
         }
         BeanUtils.copyProperties(user, userResponseDto);
         return userResponseDto;
@@ -47,8 +48,6 @@ public class UserServiceImpl implements UserService {
     public String deleteUser(Long id) {
         userRepository.deleteById(id);
         return "Deleted Successfully";
-
-
     }
 
 

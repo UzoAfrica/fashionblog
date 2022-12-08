@@ -26,7 +26,7 @@ public class UserController {
     @PostMapping(value = "/register")
     public ResponseEntity<UserResponseDto> createAccount(@RequestBody UserSignupDto userSignupDto) {
         UserResponseDto userResponseDto = userService.signUp(userSignupDto);
-        return new ResponseEntity<>(userResponseDto, HttpStatus.CREATED);
+        return new ResponseEntity<>(userResponseDto, HttpStatus.OK);
     }
 
     @DeleteMapping("/{id}")
