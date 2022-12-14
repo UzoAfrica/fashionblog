@@ -81,6 +81,7 @@
 				</configuration>
 			</plugin>
 		</plugins>
+		<finalName>fashionblog-images</finalName>
 	</build>
 
 </project>
