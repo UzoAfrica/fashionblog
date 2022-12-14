@@ -21,18 +21,15 @@ public class UserServiceImpl implements UserService {
     public UserResponseDto signUp(UserSignupDto userSignupDto) {
         User user = new User();
         UserResponseDto userResponseDto = new UserResponseDto();
-        if (!userSignupDto.getPassword().equals(userSignupDto.getConfirmPassword())) {
+        if (!userSignupDto.getPassword().equalsIgnoreCase(userSignupDto.getConfirmPassword())) {
             throw new InvalidRequestException("Password mismatch", "Please retype your password");
         }
 
         BeanUtils.copyProperties(userSignupDto, user);
-        try {
-            user = userRepository.save(user);
-        } catch (RuntimeException e) {
 
-//            throw new InvalidRequestException(e.getMessage(), "Try again");
-        }
+        user = userRepository.save(user);
         BeanUtils.copyProperties(user, userResponseDto);
+
         return userResponseDto;
     }
 

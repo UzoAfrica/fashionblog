@@ -7,11 +7,11 @@ import com.uzo.fashionblog_week_nine.dtos.UserSignupDto;
 import com.uzo.fashionblog_week_nine.repositories.UserRepository;
 import com.uzo.fashionblog_week_nine.services.UserService;
 import lombok.AllArgsConstructor;
+import lombok.Data;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-
 
 @RestController
 @RequestMapping("/api/v1/user")
